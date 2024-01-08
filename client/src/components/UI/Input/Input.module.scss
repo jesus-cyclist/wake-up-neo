@@ -1,0 +1,136 @@
+// .container {
+//   position: relative;
+//   display: flex;
+//   justify-content: end;
+//   align-items: center;
+//   max-width: 15rem;
+//   width: 100%;
+// }
+
+// .input {
+//   width: 100%;
+//   border: 1px solid var(--text-color-secondary);
+//   color: var(--text-color);
+//   line-height: inherit;
+//   font-size: 1rem;
+//   font-weight: inherit;
+//   font-family: inherit;
+//   padding: 0.1rem 0.2rem;
+//   background: transparent;
+// }
+
+// .placeholder {
+//   position: absolute;
+//   top: 50%;
+//   left: 0.2rem;
+//   transform: translate(0, -50%);
+//   display: inline-block;
+//   cursor: text;
+//   animation: deActivatePlaceholder 0.5s ease forwards;
+// }
+
+// .placeholder::first-letter {
+//   text-transform: uppercase;
+// }
+
+// .placeholderActive {
+//   transform: translate(calc(-100% - 1rem), -50%);
+//   animation: activatePlaceholder 0.5s ease forwards;
+// }
+
+// input::placeholder {
+//   opacity: 0;
+// }
+
+// .input:focus ~ .placeholder {
+//   transform: translate(calc(-100% - 1rem), -50%);
+//   animation: activatePlaceholder 0.5s ease forwards;
+//   cursor: auto;
+// }
+
+// @keyframes activatePlaceholder {
+//   0% {
+//     transform: translate(0, -50%);
+//     opacity: 1;
+//   }
+//   50% {
+//     opacity: 0;
+//     transform: translate(0, -50%);
+//   }
+//   51% {
+//     opacity: 0;
+//     transform: translate(calc(-100% - 1rem), -50%);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translate(calc(-100% - 1rem), -50%);
+//   }
+// }
+
+// @keyframes deActivatePlaceholder {
+//   0% {
+//     opacity: 1;
+//     transform: translate(calc(-100% - 1rem), -50%);
+//   }
+//   50% {
+//     opacity: 0;
+//     transform: translate(calc(-100% - 1rem), -50%);
+//   }
+//   51% {
+//     opacity: 0;
+//     transform: translate(0, -50%);
+//   }
+//   100% {
+//     transform: translate(0, -50%);
+//     opacity: 1;
+//   }
+// }
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  max-width: 15rem;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid var(--text-color-secondary);
+  color: var(--text-color);
+  line-height: inherit;
+  font-size: 1rem;
+  font-weight: inherit;
+  font-family: inherit;
+  padding: 0.1rem 0.2rem;
+  background: transparent;
+}
+
+.placeholder {
+  position: absolute;
+  top: 50%;
+  left: 0.2rem;
+  transform: translate(0, -50%);
+  display: inline-block;
+  cursor: text;
+  transition: transform 0.5s ease;
+}
+
+.placeholder::first-letter {
+  text-transform: uppercase;
+}
+
+.placeholderActive {
+  transform: translate(calc(-100% - 1rem), -50%);
+}
+
+input::placeholder {
+  opacity: 0;
+}
+
+.input:focus ~ .placeholder {
+  transform: translate(calc(-100% - 1rem), -50%);
+  transition: transform 0.5s ease;
+  cursor: auto;
+}

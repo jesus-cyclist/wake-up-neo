@@ -1,0 +1,58 @@
+.container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.containerActive {
+  pointer-events: all;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background: #000000;
+  transition: opacity 0.5s ease;
+}
+
+.overlayActive {
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+}
+
+.contextMenu {
+  position: absolute;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+  border: 1px solid var(--text-color-secondary);
+  padding: 0;
+}
+
+.contextMenuActive {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.contextMenu__item {
+  padding: 0.2rem 0.4rem;
+  background: var(--background-color);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.contextMenu__item::first-letter {
+  text-transform: uppercase;
+}
+
+.contextMenu__item:hover {
+  background: var(--text-color);
+  color: var(--background-color);
+  transition: background 0.5s ease, color 0.5s ease;
+}

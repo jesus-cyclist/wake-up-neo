@@ -1,0 +1,49 @@
+.container {
+  position: relative;
+
+  .button {
+    cursor: pointer;
+    color: var(--text-color-secondary);
+    transition: color 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttonActive {
+    color: var(--text-color);
+    transition: color 0.5s ease;
+  }
+
+  .list {
+    display: grid;
+    padding: 0;
+    position: absolute;
+    border: 1px solid var(--text-color-secondary);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    .list__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      background: var(--background-color);
+      color: var(--text-color);
+      padding: 0.4rem;
+      transition: background 0.5s ease, color 0.5s ease;
+      cursor: pointer;
+    }
+  }
+
+  .listActive {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    pointer-events: all;
+    .list__item:hover {
+      background: var(--text-color-secondary);
+      color: var(--background-color);
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+  }
+}

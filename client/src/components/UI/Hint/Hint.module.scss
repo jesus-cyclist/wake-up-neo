@@ -1,0 +1,23 @@
+.hint {
+  display: inline;
+  max-width: 100%;
+  text-align: center;
+  opacity: 0;
+  margin-bottom: 10px;
+  min-height: calc(1rem * 1.15);
+}
+
+.hintEnterActive {
+  opacity: 0;
+}
+.hintEnterDone {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+.hintExit {
+  opacity: 1;
+}
+.hintExitActive {
+  opacity: 0;
+  transition: opacity 0.5s;
+}

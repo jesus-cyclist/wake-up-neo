@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.joinMessage,
+.leftMessage {
+  text-align: center;
+  color: var(--text-color-secondary);
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,100 @@
+@mixin message() {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  max-width: 80vw;
+  span {
+    display: block;
+  }
+}
+
+.message__replyTo {
+  display: flex;
+  flex-direction: column;
+  background: var(--text-color-secondary);
+}
+
+.message__replyToAuthor,
+.message__replyToText {
+  text-align: start;
+  color: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  max-height: 1.15rem;
+  svg {
+    max-width: 1rem;
+    max-height: 1rem;
+  }
+}
+
+.message__replyToText {
+  overflow: hidden;
+}
+
+.senderMessage,
+.receiverMessage {
+  @include message();
+  margin-bottom: 2rem;
+}
+
+.senderMessage {
+  align-items: start;
+  margin-right: auto;
+  span:first-child::after {
+    content: '>';
+  }
+}
+
+.receiverMessage {
+  margin-left: auto;
+  text-align: end;
+  span:first-child::before {
+    content: '<';
+  }
+}
+
+.username {
+  color: var(--text-color-secondary);
+}
+
+.message {
+  position: relative;
+  max-width: 80%;
+  .message__text {
+    display: inline;
+  }
+  .timestamp {
+    position: absolute;
+    bottom: -0.7rem;
+    //right: 0;
+    // left: 0;
+    font-size: 0.6rem;
+    color: var(--text-color-secondary);
+    transition: color 0.5s ease;
+    display: flex;
+    gap: 0.2rem;
+    .status {
+      display: flex;
+      position: relative;
+      padding-right: 0.5rem;
+      padding-left: 0.2rem;
+      svg {
+        display: flex;
+        background: transparent;
+        path {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      svg:last-child {
+        position: absolute;
+        right: 0.2rem;
+        top: 0;
+      }
+    }
+  }
+}

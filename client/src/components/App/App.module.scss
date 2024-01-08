@@ -1,0 +1,168 @@
+:root {
+  --background-color: #282828;
+}
+
+html[data-theme='green'] {
+  --text-color-secondary: #13750d;
+  --text-color: #66ff66;
+}
+
+html[data-theme='white'] {
+  --text-color-secondary: #c9c6c2;
+  --text-color: #eee;
+}
+
+html[data-theme='yellow'] {
+  --text-color-secondary: #b58900;
+  --text-color: #ffcb6b;
+}
+
+html[data-theme='cyan'] {
+  --text-color-secondary: #007786;
+  --text-color: #66d9ef;
+}
+
+html[data-theme='brown'] {
+  --text-color-secondary: #8b4513;
+  --text-color: #d2691e;
+}
+
+html[data-theme='pink'] {
+  --text-color-secondary: #a52a2a;
+  --text-color: #ff6666;
+}
+
+html[data-theme='purple'] {
+  --text-color-secondary: #6a0dad;
+  --text-color: #bf8dff;
+}
+
+html[data-theme='blue-gray'] {
+  --text-color-secondary: #607d8b;
+  --text-color: #b0bec5;
+}
+
+html[data-theme='teal'] {
+  --text-color-secondary: #004d40;
+  --text-color: #009688;
+}
+
+@font-face {
+  font-family: 'Consolas';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../assets/fonts/consolas.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Press Start 2P';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../assets/fonts/PressStart2P-Regular.ttf') format('truetype');
+}
+
+.container {
+  font-family: 'Consolas';
+  font-size: 16px;
+  height: 100%;
+  background: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+}
+
+.app {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: 1100px;
+}
+
+::selection {
+  color: var(--background-color);
+  background-color: var(--text-color);
+}
+
+::-moz-selection {
+  color: var(--background-color);
+  background-color: var(--text-color);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-webkit-autofill::first-line {
+  font-family: inherit;
+  color: var(--text-color);
+}
+
+input:-webkit-autofill {
+  background-color: var(--background-color);
+}
+
+input:-webkit-autofill-selection {
+  background-color: var(--background-color);
+}
+
+.scanlines {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 300;
+  opacity: 0.6;
+  -webkit-animation: opacity 3s linear infinite;
+  animation: opacity 3s linear infinite;
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.5) 51%
+  );
+  background-size: 100% 4px;
+  pointer-events: none;
+  -webkit-animation: scanlines 0.2s linear infinite;
+  animation: scanlines 0.2s linear infinite;
+}
+
+@-webkit-keyframes scanlines {
+  from {
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(106, 101, 109, 0.4) 51%
+    );
+    background-size: 100% 4px;
+  }
+  to {
+    background: linear-gradient(
+      to bottom,
+      rgba(106, 101, 109, 0.4) 50%,
+      transparent 51%
+    );
+    background-size: 100% 4px;
+  }
+}
+
+@keyframes scanlines {
+  from {
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(106, 101, 109, 0.4) 51%
+    );
+    background-size: 100% 4px;
+  }
+  to {
+    background: linear-gradient(
+      to bottom,
+      rgba(106, 101, 109, 0.4) 50%,
+      transparent 51%
+    );
+    background-size: 100% 4px;
+  }
+}

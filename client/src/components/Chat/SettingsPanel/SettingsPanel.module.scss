@@ -1,0 +1,41 @@
+.settingsPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--background-color);
+  position: absolute;
+  top: 3rem;
+  bottom: 0;
+  left: 0;
+  width: 40vw;
+  min-width: 250px;
+  transform: scaleX(0);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transform-origin: left;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--text-color);
+  border-left: none;
+  border-bottom: none;
+  z-index: 1;
+}
+
+.settingsPanelActive {
+  transform: scaleX(1);
+  opacity: 1;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+@media screen and (min-width: 768px) {
+  .settingsPanel {
+    width: auto;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    position: relative;
+    height: 100%;
+    max-height: calc(100vh - 3rem);
+    grid-area: settings;
+  }
+}

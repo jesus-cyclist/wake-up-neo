@@ -1,0 +1,14 @@
+.button {
+  background: var(--background-color);
+  border: 1px solid var(--text-color-secondary);
+  cursor: pointer;
+  width: max-content;
+  padding: 0.1rem 0.2rem;
+  transition: background 0.5s ease, opacity 0.5s ease;
+}
+
+button:active {
+  background: var(--text-color);
+  color: var(--background-color);
+  transition: background 0.5s ease, opacity 0.5s ease;
+}

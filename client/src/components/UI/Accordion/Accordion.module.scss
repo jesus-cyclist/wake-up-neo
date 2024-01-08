@@ -1,0 +1,79 @@
+.accordion {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0;
+  transition: grid-template-rows 1s ease;
+}
+
+.accordionActive {
+  grid-template-rows: 1fr auto;
+  transition: none;
+}
+
+.triggerButton {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: none;
+  background: transparent;
+  border-radius: 0.1rem;
+  padding: 0.1rem 0.2rem;
+  font-family: inherit;
+  transition: background 0.5s ease, opacity 0.5s ease, border 0.5s ease;
+  border: 1px solid var(--text-color-secondary);
+}
+
+.triggerButtonActive {
+  background: var(--text-color-sec);
+  color: var(--background-color-sec);
+  border-radius: 0.1rem 0.1rem 0 0;
+  transition: background 0.5s ease, opacity 0.5s ease, border 0.5s ease;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: inherit;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.angle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    color: var(--text-color-secondary);
+    transform: rotate(0deg);
+    transition: transform 0.5s ease, color 0.5s ease;
+  }
+}
+
+.angleActive {
+  svg {
+    transform: rotate(-180deg);
+    color: var(--text-color);
+    transition: transform 0.5s ease, color 0.5s ease;
+  }
+}
+
+.content {
+  opacity: 0.2;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  border: 1px solid var(--text-color-secondary);
+  border-top: none;
+  border-radius: 0.1rem;
+  padding: 0.1rem 0.2rem;
+}
+
+.contentActive {
+  border-radius: 0 0 0.1rem 0.1rem;
+  opacity: 1;
+  transform: scaleY(1);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}

@@ -1,0 +1,68 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.glitch {
+  color: var(--text-color);
+  font-size: 2rem;
+  position: relative;
+  width: auto;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+@keyframes noise-anim {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(3) + rem, 9999rem, random(3) + rem, 0);
+    }
+  }
+}
+.glitch:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0.2rem;
+  text-shadow: -1px 0 rgb(241, 11, 11);
+
+  bottom: -2rem;
+  color: var(--text-color);
+  background: var(--background-color);
+  overflow: hidden;
+  clip: rect(0, 200rem, 0, 0);
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(3) + rem, 9999rem, random(3) + rem, 0);
+    }
+  }
+}
+.glitch:before {
+  content: attr(data-text);
+  position: absolute;
+  left: -0.2rem;
+  text-shadow: 1px 0 rgb(10, 10, 239);
+  top: 0;
+  color: var(--text-color);
+  background: var(--background-color);
+  overflow: hidden;
+  clip: rect(0, 200rem, 0, 0);
+  animation: noise-anim-2 2s infinite linear alternate-reverse;
+}
+
+.link {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

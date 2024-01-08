@@ -1,0 +1,18 @@
+.messagesArea {
+  overflow: scroll;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.messagesArea::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.messagesArea::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+.messagesArea::-webkit-scrollbar-thumb {
+  background: var(--text-color-secondary);
+  border: 0.25rem solid var(--background-color);
+}

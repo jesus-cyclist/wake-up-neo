@@ -1,0 +1,9 @@
+.chatPanel {
+  height: 100%;
+  padding: 1rem 0 1rem 1rem;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-gap: 1rem;
+  max-height: calc(100vh - 3rem);
+  grid-area: chat;
+}
